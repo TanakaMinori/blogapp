@@ -1,7 +1,8 @@
 <header>
   <div class="menu">
     <ul>
-      <p>ログイン</p>
+      <%= link_to 'ユーザー登録', new_user_registration_path, class: 'li' %>
+      <%= link_to 'ログイン', new_user_session_path, class: 'li' %>
       <%= link_to '新規投稿', new_tweet_path, class: 'li' %>
     </ul>
   </div>
@@ -17,8 +18,14 @@
     <div class="image">
       <%= tweet.image_id %>
     </div>
-    <%= link_to '編集', edit_tweet_path(tweet) %>
+    <div class="btn-wrap">
+      <ul>      
+        <li><%= link_to '編集', edit_tweet_path(tweet) %></li>
+        <li><%= link_to '削除する', "/tweets/#{tweet.id}", method: :delete %></li>
+      </ul>
+    </div>
     <% end %>
+    </div>
   </div>
 </div>
 
