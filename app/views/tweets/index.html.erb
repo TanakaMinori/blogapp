@@ -1,14 +1,27 @@
 <header>
-  ここにヘッダー
+  <div class="menu">
+    <ul>
+      <p>ログイン</p>
+      <%= link_to '新規投稿', new_tweet_path, class: 'li' %>
+    </ul>
+  </div>
 </header>
+
 <div class="content-wrap">
   <div class="content">
+    <% @tweets.each do |tweet| %>
     <div class="main-content">
-      <div class="title">ここにタイトル</div>
-      <div class="text">ここに本文</div>
+      <div class="theme"><%= tweet.theme %></div>
+      <div class="text"><%= tweet.text %></div>
     </div>
     <div class="image">
-      ここにIMAGE
+      <%= tweet.image_id %>
     </div>
+    <%= link_to '編集', edit_tweet_path(tweet) %>
+    <% end %>
   </div>
 </div>
+
+<footer>
+  ここにフッター
+</footer>

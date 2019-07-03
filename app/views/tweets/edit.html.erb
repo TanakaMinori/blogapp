@@ -1,4 +1,4 @@
-<h3>新規作成</h3>
+<h3>編集</h3>
 <div class="form-wrap">
   <%= form_for(@tweet) do |f| %>
   <div class="form-row">
@@ -14,7 +14,7 @@
     <%= f.file_field :image_id　%>
   </div>
   <div class="form-row">
-    <%= f.submit "投稿する", class: "btn" %>
+    <%= f.submit "編集する", class: "btn" %>
   </div>
   <% end %>
 </div>

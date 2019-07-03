@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_03_080612) do
+ActiveRecord::Schema.define(version: 2019_07_03_104419) do
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_080612) do
     t.integer "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title"
+    t.string "theme"
   end
 
 end
