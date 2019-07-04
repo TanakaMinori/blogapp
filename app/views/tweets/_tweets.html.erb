@@ -1,0 +1,18 @@
+<div class="content-wrap">
+  <div class="content">
+    <div class="main-content">
+      <div class="theme"><%= tweet.theme %></div>
+      <div class="text"><%= tweet.text %></div>
+    </div>
+    <div class="image">
+      <%= tweet.image_id %>
+    </div>
+    <div class="btn-wrap">
+      <ul>      
+        <li><%= link_to '編集', edit_tweet_path(tweet) %></li>
+        <li><%= link_to '削除する', "/tweets/#{tweet.id}", method: :delete %></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
