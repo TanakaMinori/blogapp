@@ -4,17 +4,86 @@
 .form ,.textarea{
   border: 1px solid #aaa;
   border-radius: 5px;
-  width: 300px;
+  width: 400px;
   font-size: 15px;
+  margin: 10px;
+}
+h3 {
+  font-size: 20px;
+  text-align: center;
 }
 .form {
   height: 25px;
+  margin: 10px;
+}
+.form-row {
+  margin: 10px;
+}
+.form-wrap {
+  width: 400px;
+  margin: 0 auto;
 }
 .btn {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
+  color: white;
+  border: solid 2px #bebebe;
   border-radius: 3px;
+  background-color: #bebebe;
+  margin: 0 10px;
+}
+ul {
+  text-align: right;
+  padding-right: 20px;
+}
+li {
+  text-decoration: none;
+}
+.content-wrap {
+  width: 750px;
+  margin: 0 auto;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #bebebe;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.main-content {
+  width: 100%;
+}
+.content {
+  margin: 10px;
+}
+.content-image {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 8px gray;
+}
+.content-image-wrap{
+  float: left;
+  margin: 10px 50px 10px 10px;
+}
+.theme {
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-decoration: underline;
+}
+.text {
+  font-size: 15px;
+  padding: 0 30px;
+  margin: 0 30px;
+  letter-spacing: 3px;
+  line-height: 1.5;
+  font-weight: 200;
+}
+.name {
+  font-size: 15px;
+  clear: both;
+  padding-left: 50px;
 }

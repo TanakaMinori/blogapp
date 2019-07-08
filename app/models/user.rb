@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :tweets
+  has_one :profile
+  accepts_nested_attributes_for :profile
 end

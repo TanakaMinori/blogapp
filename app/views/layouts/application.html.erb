@@ -4,12 +4,55 @@
     <title>Blogapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pushy/1.1.2/css/pushy.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+
+  <header>
+    <button class="menu-btn menu_icon"><i class="fas fa-bars menu_icon fa-2x"></i></button>
+    <div class="logo">My Blog</div>
+  
+  <nav class="pushy pushy-left">
+      <div class="pushy-content">
+        <div off-canvas="sb-left left push" style="display: block;">
+          <button class="menu-btn close_icon"><i class="far fa-times-circle fa-2x"></i></button>
+          <ul class="menu-link">
+            <% unless user_signed_in? %>
+              <li class="pushy-link"><%= link_to 'ホーム', root_path %></li>
+              <li class="pushy-link"><%= link_to 'ユーザー登録', new_user_registration_path %></li>
+              <li class="pushy-link"><%= link_to 'ログイン', new_user_session_path %></li>
+            <% else %>
+              <div class="profile">
+                <% if @profile.image.attached? %>
+                  <img class="image" style="background-image: url(<%= rails_blob_path(current_user.profile.image) %>)">
+                <% end %>
+              </div>
+              <span><%= @profile.nickname %></span>
+              <li class="pushy-link"><a href="/"><i class="fas fa-home fa-2x"></i></a></li>
+              <li class="pushy-link"><%= link_to '投稿する', new_tweet_path %></li>
+              <li class="pushy-link"><%= link_to 'マイページ', user_path(current_user.id) %></li>
+              <li class="pushy-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% end%>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div canvas="container">
+      <%= yield %>
+  </div>
+        <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pushy/1.1.2/js/pushy.min.js"></script>
   </body>
 </html>

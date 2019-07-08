@@ -1,1 +1,19 @@
-<P>hello</P>
+<div class="profile-wrap">
+  <div class="profile">
+    <% if @profile.image.attached? %>
+      <img class="profile-image" style="background-image: url(<%= rails_blob_path(@profile.image) %>)">
+    <% end %>
+  </div>
+  <p class="profile-name"><%= @profile.nickname %> さんのページ</p>
+  
+  <h3 class="profile-detail-wrap">プロフィール</h3>
+    <span class="profile-detail">勉強している言語：<%= @profile.study_code %></span></br>
+    <span class="profile-detail">パソコンのOS種類：<%= @profile.pc_os %></span></br>
+    <span class="profile-detail">自己紹介：</span></br><span class="profile-detail"><%= @profile.introduction %></span>
+    <% if user_signed_in? && current_user.id == @profile.user_id %>
+      <%= link_to 'プロフィール編集', "/profiles/#{@profile.id}/edit" %>
+    <% end %>
+</div>
+  <% @tweets.each do |tweet| %>
+    <%= render partial: "tweets/tweets", locals: {tweet: tweet} %>
+  <% end %>
