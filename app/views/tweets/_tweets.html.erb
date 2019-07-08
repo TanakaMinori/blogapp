@@ -1,0 +1,29 @@
+<div class="content-wrap">
+  
+  <div class="content-image-wrap">
+    <% if tweet.image.attached? %>
+      <div class="content-image" style="background-image: url(<%= rails_blob_path(tweet.image) %>)"></div>
+    <% else %>
+      <div class="content-image-nil">
+        <a href="<%= edit_tweet_path(tweet, @profile) %>"><i class="fas fa-upload fa-3x upload-icon"></i></a>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="content">
+    <div class="main-content">
+      <div class="theme">タイトル：<%= tweet.theme %></div>
+      <div><%= simple_format(tweet.text, class: "text") %></div>
+    </div>
+    <div class="name"><%= link_to"#{tweet.profile.nickname}", user_path(tweet.profile.user) %>さんの投稿</div>
+  </div>
+    
+    <% if user_signed_in? && tweet.profile.user_id == current_user.id %>
+      <div class="btn-wrap">
+        <ul>
+            <li class="btn"><%= link_to '編集', edit_tweet_path(tweet, @profile), class: "link" %></li> 
+            <li class="btn"><%= link_to '削除', "/tweets/#{tweet.id}", method: :delete, class: "link" %></li>
+        </ul>
+      </div>
+    <% end %>
+</div>

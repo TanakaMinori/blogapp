@@ -13,5 +13,100 @@
  *= require_tree .
  *= require_self
  */
-body { font-family: 'Courier New';
+body { 
+  font-family:'Noto Sans JP', sans-serif;
+  background-color: #f7f7f7;
+  width: 100%;
 }
+header {
+  background-color: #191918;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+header li {
+  list-style: none;
+}
+span {
+  color: white;
+  padding: 15px 30px;
+}
+button {
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  margin-left: 50px;
+  height: 100%;
+}
+.logo {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  color: white;
+  display: inline-block;
+  text-align: right;
+  padding-left: 700px;
+}
+.container {
+  padding-top: 55px;
+}
+.menu-link {
+  text-align: left;
+}
+.menu_icon {
+  color: #bebebe;
+}
+.close_icon {
+  display: block;
+  color: #bebebe;
+  margin: 10px auto;
+}
+.content-image-nil{
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+  box-shadow: 0 0 8px gray;
+}
+.upload-icon {
+  color: #bebebe;
+  padding: 75px;
+}
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  box-shadow: 0 0 8px gray;
+  background-size: cover;
+  margin: 30px auto;
+  overflow: hidden;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}
+ul.pagination {
+  background-color: transparent;
+  text-align: center;
+}
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+}
+footer {
+  height: 50px;
+  background-color: #191918;
+  text-align: center;
+}
+
